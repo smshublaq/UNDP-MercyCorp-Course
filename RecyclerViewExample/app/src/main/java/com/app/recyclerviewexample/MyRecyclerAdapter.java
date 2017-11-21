@@ -73,4 +73,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     public void setiClickListener(IClickListener iClickListener) {
         this.iClickListener = iClickListener;
     }
+
+    public void addEmployee(Employee employee){
+        employeeList.add(employee);
+        notifyDataSetChanged();
+    }
+
+    public void addEmployee(List<Employee> employee){
+        employeeList.addAll(employee);
+        notifyDataSetChanged();
+    }
 }

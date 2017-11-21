@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.swipeRefresh);
+        final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.swipeRefresh);
         //RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
 
         recyclerView.setLayoutManager(layoutManager);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         employeeList.add(new Employee("osama3","41"));
         employeeList.add(new Employee("osama3","41"));
         */
-        MyRecyclerAdapter adapter = new MyRecyclerAdapter(this,employeeList);
+        final MyRecyclerAdapter adapter = new MyRecyclerAdapter(this,employeeList);
 
         adapter.setiClickListener(new MyRecyclerAdapter.IClickListener() {
             @Override
@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 Toast.makeText(MainActivity.this, "Refreshed", Toast.LENGTH_SHORT).show();
+                adapter.addEmployee(new Employee("new","321"));
+                swipeRefreshLayout.setRefreshing(false);
+
             }
         });
     }
