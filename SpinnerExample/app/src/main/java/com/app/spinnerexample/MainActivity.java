@@ -29,19 +29,30 @@ public class MainActivity extends AppCompatActivity {
         List<String> list = new ArrayList();
         list.add("a");
                 list.add("b");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list);
+                /*
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<String>
+                        (this,android.R.layout.simple_list_item_1,list);
+        */
 
 
-       adapter.add("ahmed");
-       adapter.add("mohammed");
-       adapter.add("hassan");
+                /*
+        ArrayAdapter<Student> adapter =
+                new ArrayAdapter
+                        (this,android.R.layout.simple_list_item_1);
+
+        adapter.add(new Student("ahmed","1234"));
+        adapter.add(new Student("hosam","432"));
+        adapter.add(new Student("hussien","243"));
         spinner.setAdapter(adapter);
+
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long viewId) {
-                String s = (String)adapterView.getItemAtPosition(position);
+                Student s = (Student)adapterView.getItemAtPosition(position);
 
-                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, s.getId() + " " + s.getName(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -49,5 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        */
+
     }
 }
