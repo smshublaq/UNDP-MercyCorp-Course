@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         lst.addHeaderView(header);
+
         /*
         ArrayAdapter<String> adapter = new ArrayAdapter
                 (this,android.R.layout.simple_list_item_1);
