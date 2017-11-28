@@ -1,6 +1,7 @@
 package com.app.menuexample;
 
 import android.content.Intent;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +27,34 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         registerForContextMenu(btn);
+
+        Button btnPopUp = findViewById(R.id.btnPopupMenu);
+        btnPopUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu
+                        (MainActivity.this,view);
+                getMenuInflater().inflate(R.menu.main_menu
+                        ,popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(
+                        new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()){
+                            case R.id.settings:
+                                Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                        return false;
+                    }
+
+                });
+                popupMenu.show();
+
+            }
+        });
     }
 
     @Override
