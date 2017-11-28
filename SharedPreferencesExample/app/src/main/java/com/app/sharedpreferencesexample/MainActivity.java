@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("name","ahmed");
+        
         //boolean isDone = editor.commit();
         //editor.apply();
         editor.commit();
