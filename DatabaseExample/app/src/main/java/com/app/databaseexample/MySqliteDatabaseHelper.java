@@ -22,7 +22,7 @@ public class MySqliteDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + STUDENT_TABLE
                 + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                ""+STUDENT_NAME_COLUMN+ "TEXT)");
+                " "+STUDENT_NAME_COLUMN+ " TEXT)");
     }
 
     @Override
