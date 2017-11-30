@@ -11,6 +11,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MySqliteDatabaseHelper extends SQLiteOpenHelper {
     public static final String STUDENT_TABLE = "STUDENT_TABLE";
     public static final String STUDENT_NAME_COLUMN = "STUDENT_NAME";
+    public static final String STUDENT_ID_COLUMN = "_id";
+
     public MySqliteDatabaseHelper(Context context,
                                   String name,
                                   SQLiteDatabase.CursorFactory factory
@@ -21,7 +23,7 @@ public class MySqliteDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + STUDENT_TABLE
-                + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                + "(" + STUDENT_ID_COLUMN + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " "+STUDENT_NAME_COLUMN+ " TEXT)");
     }
 
