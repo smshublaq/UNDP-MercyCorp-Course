@@ -72,12 +72,13 @@ public class DB {
                 ,new String[]{id+""});
         return deletedRows;
     }
-    
+
     public long insertWithHighPerformance(String name){
         SQLiteStatement sqLiteStatement = sqLiteDatabase.compileStatement("insert into " + MySqliteDatabaseHelper.STUDENT_TABLE + "("+MySqliteDatabaseHelper.STUDENT_NAME_COLUMN + " values(?)" );
         sqLiteStatement.bindString(1,name);
         long id = sqLiteStatement.executeInsert();
         return id;
+
     }
 
 }
