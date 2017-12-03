@@ -16,9 +16,16 @@
         android:text="Save"
         />
     <Button
-        android:id="@+id/goTo"
+    android:id="@+id/goTo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Go to Second Fragment"
+    />
+
+    <Button
+        android:id="@+id/goToListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to Second Fragment"
+        android:text="Go to List Fragment"
         />
 </LinearLayout>

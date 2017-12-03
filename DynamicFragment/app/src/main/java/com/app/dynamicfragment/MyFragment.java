@@ -21,14 +21,26 @@ public class MyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_my,container,false);
         Button btn = v.findViewById(R.id.goTo);
+        Button btnListFragment = v.findViewById(R.id.goToListFragment);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-               FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-               Fragment secondFragment = new SecondFragment();
-               fragmentTransaction.replace(R.id.container,secondFragment);
-               fragmentTransaction.commit();
+                Fragment secondFragment = new SecondFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("name","ahmed");
+                secondFragment.setArguments(bundle);
+                FragmentUtils.replaceFragment(getActivity(),R.id.container
+                        ,secondFragment,true);
+            }
+        });
+
+        btnListFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment secondFragment = new MyListFragment();
+                FragmentUtils.replaceFragment(getActivity(),R.id.container
+                        ,secondFragment,true);
             }
         });
         return v;

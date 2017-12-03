@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:id="@+id/group1">
+        <item android:id="@+id/home" android:icon="@drawable/ic_send" android:title="@string/home"/>
+        <item android:id="@+id/categories" android:icon="@mipmap/ic_launcher_round" android:title="@string/categories"/>
+    </group>
+
+    <item android:id="@+id/settings" android:icon="@mipmap/ic_launcher_round" android:title="@string/settings"/>
+
+</menu>
