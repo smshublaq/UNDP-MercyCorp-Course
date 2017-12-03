@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:titleTextColor">#ffffff</item>
         <item name="titleTextColor">#ffffff</item>
+        <item name="android:colorControlNormal">#ffffff</item>
+        <item name="colorControlNormal">#ffffff</item>
 
     </style>
 
