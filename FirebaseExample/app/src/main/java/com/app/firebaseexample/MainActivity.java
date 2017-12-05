@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Read from the database
 
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
