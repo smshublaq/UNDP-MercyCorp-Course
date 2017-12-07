@@ -13,4 +13,5 @@ interface AppConstants {
 
     String API_URL = "https://jsonplaceholder.typicode.com/posts";
     String BODY = "body";
+    String CONTACTS_KEY = "contacts";
 }
