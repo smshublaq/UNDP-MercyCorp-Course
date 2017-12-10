@@ -6,6 +6,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
  * Created by iSaleem on 12/7/17.
@@ -20,6 +21,7 @@ public class MyApplication extends Application {
         super.onCreate();
         anInstance = this;
         requestQueue = Volley.newRequestQueue(this);
+        Fresco.initialize(this);
 
     }
 
