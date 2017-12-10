@@ -21,19 +21,7 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        //String name = intent.getStringExtra("name");
-        //Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
-        //stopSelf();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                boolean i = true;
-                while(i){
-                    Log.d("i","We HATE Android Development");
-                }
-            }
-        }).start();
 
 
         return START_STICKY;

@@ -13,13 +13,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Button btn = findViewById(R.id.btnStart);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 Intent intent = new Intent(MainActivity.this,MyService.class);
                 intent.putExtra("name","ahmed");
                 startService(intent);
+                */
+
+                Intent intent = new Intent(MainActivity.this,MyIntentService.class);
+                intent.putExtra("name","ahmed");
+                startService(intent);
+
             }
         });
     }

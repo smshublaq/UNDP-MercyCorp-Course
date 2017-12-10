@@ -3,6 +3,7 @@ package com.app.volleyexample;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 
 /**
@@ -109,7 +111,17 @@ public class VolleyRequests<T> extends Observable{
             public void onErrorResponse(VolleyError error) {
 
             }
-        });
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                return super.getHeaders();
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                return super.getParams();
+            }
+        };
 
         MyApplication.getInstance().addToRequestQueue(jsonObjectRequest);
     }
