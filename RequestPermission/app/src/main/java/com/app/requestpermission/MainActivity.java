@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Button btn = findViewById(R.id.btn);
 
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
 
             if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
