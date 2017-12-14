@@ -32,6 +32,10 @@ public class MyService extends Service {
         return (x+y) + "";
     }
 
+    public String getCurrentTime(){
+        return System.currentTimeMillis()+"";
+    }
+
 
 
     class MyBinder extends Binder{

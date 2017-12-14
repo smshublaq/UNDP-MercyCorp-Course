@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(isBound){
-                    tv.setText(myService.getSum(10,11));
+                    tv.setText(myService.getCurrentTime());
                 }
             }
         });
